@@ -33,7 +33,7 @@
 
 <div class="row">
   <div class="container">
-    <h1>Mis Registros Cargados</h1>
+    <h1>Calificaciones sin Notificar</h1>
   </div>
 </div>
 
@@ -47,9 +47,9 @@
                     <th width="10%">Jerarquia</th>
                     <th width="15%">Apellido</th>
                     <th width="15%">Nombre</th>
-                    <th width="10%">Desde</th>
-                    <th width="10%">Hasta</th>
-                    <th width="10%">Promedio</th>
+                    <th width="10%">Jerarquia Calificador</th>
+                    <th width="10%">Apellido Calificador</th>
+                    <th width="10%">Nombres Calificador</th>
                     <th width="5%">Opciones</th>
                 </tr>
             </thead>
@@ -61,18 +61,12 @@
                   <td>{{ $value->jerarquia }}</td>
                   <td>{{ $value->apellido }}</td>
                   <td>{{ $value->nombres }}</td>
-                  <td>{{ $value->fecha_desde }}</td>
-                  <td>{{ $value->fecha_hasta }}</td>
-                  <td>{{ $value->promedio }}</td>
+                  <td>{{ $value->jerarquia_calificador }}</td>
+                  <td>{{ $value->apellido_calificador }}</td>
+                  <td>{{ $value->nombres_calificador }}</td>
                   <td>
-                    @if($value->aprobado == 0)
-                      <a href="{{ route('edit', $value->id) }}"><i class="fas fa-edit" title="Editar"></i></a>
-                      <a href="{{ route('reporte_calificacion', $value->id) }}" target="_blank"><i class="fas fa-file-alt" title="Ver Calificación"></i></a>
-                    @else
-                    <!-- <a href="{{ route('print', $value->id) }}" target="_blank"><i class="fas fa-file-pdf" title="PDF"></i></a> -->
-
-                      <a href="{{ route('reporte_calificacion', $value->id) }}" target="_blank"><i class="fas fa-file-alt" title="Ver Calificación"></i></a>
-                    @endif
+                      <a href="{{ route('notificado', $value->id) }}"><i class="fas fa-check-double" title="Registrar NOTIFICACION"></i></a>
+                      <a href="{{ route('reporte_ficha_notificacion_calificacion', $value->id) }}" target="_blank"><i class="fas fa-file-export" title="Ver Ficha de Notificación"></i></a>
                   </td>
                 </tr>
               @endforeach

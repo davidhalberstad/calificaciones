@@ -3,7 +3,7 @@
   <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
     <!-- Panel de Control del Calificador -->
     @if(auth()->user()->is_admin)
-    <li class="nav-item has-treeview menu-open">
+    <li class="nav-item has-treeview menu-closed"> <!--  open -->
       <a href="#" class="nav-link active">
         <i class="nav-icon fas fa-tachometer-alt"></i>
         <p>
@@ -62,38 +62,32 @@
       </a>
       <ul class="nav nav-treeview">
 
+
         <li class="nav-item">
-          <a href="{{ url('consulta_calificador_calificado') }}" class="nav-link {{ ! Route::is('consulta_calificador_calificado') ?: 'active' }}">
+          <a href="{{ url('junta/visualizar') }}" class="nav-link {{ ! Route::is('junta/visualizar') ?: 'active' }}">
             <i class="far fa-circle nav-icon"></i>
-            <p>Alta</p>
+            <p>Totalidad</p>
           </a>
         </li>
 
         <li class="nav-item">
-          <a href="{{ url('editar') }}" class="nav-link {{ ! Route::is('editar') ?: 'active' }}">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Editar</p>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a href="{{ url('aprobar') }}" class="nav-link {{ ! Route::is('aprobar') ?: 'active' }}">
+          <a href="{{ url('junta/aprobar') }}" class="nav-link {{ ! Route::is('junta/aprobar') ?: 'active' }}">
             <i class="far fa-circle nav-icon"></i>
             <p>Aprobar</p>
           </a>
         </li>
 
         <li class="nav-item">
-          <a href="{{ url('notificar') }}" class="nav-link {{ ! Route::is('notificar') ?: 'active' }}">
+          <a href="{{ url('junta/notificar') }}" class="nav-link {{ ! Route::is('junta/notificar') ?: 'active' }}">
             <i class="far fa-circle nav-icon"></i>
             <p>Notificar</p>
           </a>
         </li>
 
         <li class="nav-item">
-          <a href="{{ url('visualizar') }}" class="nav-link {{ ! Route::is('visualizar') ?: 'active' }}">
+          <a href="{{ url('junta/panelControlJunta') }}" class="nav-link {{ ! Route::is('junta/panelControlJunta') ?: 'active' }}">
             <i class="far fa-circle nav-icon"></i>
-            <p>Totalidad</p>
+            <p>Panel de Control</p>
           </a>
         </li>
 

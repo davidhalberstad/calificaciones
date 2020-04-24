@@ -26,7 +26,7 @@ Route::Get('productByCategory/{id}', 'CalificacionesController@byCategory');
 Route::group(['middleware'=>'admin', 'namespace'=>'Admin'], function (){
 
 
-    // Denuncias
+    // Calificaciones
     Route::get('/calificaciones/{id}', 'CalificacionesController@index')->name('calificaciones');
     Route::post('/calificaciones/{id}', 'CalificacionesController@store')->name('store');
 
@@ -43,6 +43,29 @@ Route::group(['middleware'=>'admin', 'namespace'=>'Admin'], function (){
     Route::get('/notificar', 'CalificacionesController@notificar')->name('notificar');
     Route::get('/notificado/{id}', 'CalificacionesController@notificado')->name('notificado');
     Route::post('/notificado/{id}', 'CalificacionesController@notificando');
+
+
+    Route::get('/home', 'CalificacionesController@home')->name('home');
+
+    // Junta
+    Route::get('/juntas/{id}', 'JuntaController@index')->name('juntas');
+    Route::post('/juntas/{id}', 'JuntaController@store')->name('store');
+
+    Route::get('/juntas/{id}', 'JuntaController@edit')->name('edit');
+    Route::post('/juntas/{id}', 'JuntaController@update');
+    Route::get('/juntas', 'JuntaController@editar')->name('editar');
+
+    Route::get('/juntas/{id}/eliminar', 'JuntaController@delete')->name('delete');
+
+    Route::get('/junta/panelControlJunta', 'JuntaController@panelControlJunta')->name('junta/panelControlJunta');
+
+    Route::get('/junta/visualizar', 'JuntaController@visualizar')->name('junta/visualizar');
+
+    Route::get('/junta/aprobar', 'JuntaController@aprobar')->name('junta/aprobar');
+
+    Route::get('/junta/notificar', 'JuntaController@notificar')->name('junta/notificar');
+    Route::get('/notificado/{id}', 'JuntaController@notificado')->name('notificado');
+    Route::post('/notificado/{id}', 'JuntaController@notificando');
 
 
     Route::get('/home', 'CalificacionesController@home')->name('home');
@@ -70,13 +93,6 @@ Route::get('productBySecretaria/{id}', 'CalificacionesController@bySecretaria')-
   //Numero de Preventivo
   Route::get('/asignar_nro_preventivo/{id}', 'CalificacionesController@editNroPreventivo')->name('editNroPreventivo');
   Route::post('/asignar_nro_preventivo/{id}', 'CalificacionesController@updateNroPreventivo');
-
-//Vista del consulta_calificador_calificado
-  // Route::get('/consulta_calificador_calificado', function () {
-  //       return view('admin.calificador.consulta_calificador_calificado');
-  //   })->name('consulta_calificador_calificado');
-//Buscador
-// Route::get("home/search/9800", "CalificacionesController@search");
 
 //Buscar calificado
   Route::get('/consulta_calificador_calificado', 'CalificacionesController@calificado')->name('consulta_calificador_calificado');

@@ -33,7 +33,7 @@
 
 <div class="row">
   <div class="container">
-    <h1>Mis Registros Cargados</h1>
+    <h1>Totalidad de Calificaciones Cargadas</h1>
   </div>
 </div>
 

@@ -33,7 +33,7 @@
 
 <div class="row">
   <div class="container">
-    <h1>Mis Registros Cargados</h1>
+    <h1>Faltan Aprobar</h1>
   </div>
 </div>
 
@@ -66,11 +66,9 @@
                   <td>{{ $value->promedio }}</td>
                   <td>
                     @if($value->aprobado == 0)
-                      <a href="{{ route('edit', $value->id) }}"><i class="fas fa-edit" title="Editar"></i></a>
+                      <a href="{{ route('edit', $value->id) }}"><i class="fas fa-file-signature" title="Aprobar"></i></a>
                       <a href="{{ route('reporte_calificacion', $value->id) }}" target="_blank"><i class="fas fa-file-alt" title="Ver Calificación"></i></a>
                     @else
-                    <!-- <a href="{{ route('print', $value->id) }}" target="_blank"><i class="fas fa-file-pdf" title="PDF"></i></a> -->
-
                       <a href="{{ route('reporte_calificacion', $value->id) }}" target="_blank"><i class="fas fa-file-alt" title="Ver Calificación"></i></a>
                     @endif
                   </td>
