@@ -654,7 +654,7 @@ $(document).ready(function() {
   $("#dias").text(dias);
 
   if (dias <= 60) {
-    alert("Días a CALIFICAR: "  + dias + ". Por lo tanto Usted NO califica por tiempo Mínimo. Debe colocar el valor 0 en todos los guarismos de: Caracter, Mando, Espíritu Policial, Compromiso Profesional, Etica y Conducta. Y en el Juicio Sintético deberá escrbir la leyenda: NO CALIFICO POR TIMPO MINIMO. Y la final Guardar la Calificación.");
+    alert("Días a CALIFICAR: "  + dias + ". Por lo tanto Usted NO califica por tiempo Mínimo. Debe colocar el valor 0 en todos los guarismos de: Caracter, Mando, Espíritu Policial, Compromiso Profesional, Etica y Conducta. Y en el Juicio Sintético deberá escribir la leyenda: NO CALIFICO POR TIEMPO MINIMO. Y la final Guardar la Calificación.");
 
     document.getElementById("caracter").value = calificacion_cero;
     document.getElementById("mando").value = calificacion_cero;
